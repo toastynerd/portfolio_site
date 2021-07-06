@@ -1,0 +1,19 @@
+.form-vertical {
+  display: grid;
+
+  input {
+    margin-bottom: 2em;
+  }
+
+  textarea {
+    margin-bottom: 2em;
+  }
+
+  label {
+    margin-bottom: 0.5em;
+  }
+
+  input[type="submit"] {
+    padding: 0.5em;
+  }
+}
