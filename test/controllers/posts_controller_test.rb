@@ -9,6 +9,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should have an index" do
     get posts_path
     assert_response :success
+
+    assert_select "a", "edit", 2
+    assert_select "a", "delete", 2
+    assert_select "input[value=?]", "Create a New Post"
   end
 
   test "it should have a page to make a new post" do
@@ -16,6 +20,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_not_nil @controller.instance_variable_get('@post')
     assert_response :success
+
+    assert_select "form"
+    assert_select "label", 2
+    assert_select "textarea"
+    assert_select "input", 2
   end
 
   test "it should have an individual action for a single post" do
@@ -25,6 +34,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil test_post, "no post found in controller action"
     assert_equal "a test post", test_post.title, "post does not have right title"
     assert_response :success
+
+    assert_select "h1", test_post.title 
+    assert_select "div.body", test_post.body
   end
 
   test "it should create a new post with valid data" do
@@ -48,6 +60,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_equal test_post, posts(:test_post)
 
     assert_response :success
+
+    assert_select "h1", "Editing: #{test_post.title}"
+
+    assert_select "form"
+    assert_select "label", 2
+    assert_select "input", 3 #there's a hidden input with a token in it for the edit
   end
 
   test "it should be able to update with a PATCH request" do
