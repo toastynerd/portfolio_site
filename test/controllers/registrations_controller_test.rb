@@ -24,5 +24,6 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil test_user
 
     assert_redirected_to posts_path
+    assert_equal session[:user_id], test_user.id
   end
 end
