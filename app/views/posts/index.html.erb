@@ -15,4 +15,6 @@
   <% end %>
 </ul>
 
-<%= button_to "Create a New Post", new_post_path, method: :get %>
+<% if @user.present? && @user.admin %>
+  <%= button_to "Create a New Post", new_post_path, method: :get %>
+<% end %>
