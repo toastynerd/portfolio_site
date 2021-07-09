@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <ul>
+      <% flash.each do |type, message| %>
+        <li class="<%= type %>"><%= message %></li>
+      <% end %>
+    </ul>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
