@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_logged_in, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
   def index
     @posts = Post.all
   end
