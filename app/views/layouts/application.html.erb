@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render "partials/navbar" %>
     <ul>
       <% flash.each do |type, message| %>
         <li class="<%= type %>"><%= message %></li>

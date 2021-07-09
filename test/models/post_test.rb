@@ -4,7 +4,8 @@ class PostTest < ActiveSupport::TestCase
   setup do
     @post_params = {
       title: "a test title",
-      body: "here is a non empty body"
+      body: "here is a non empty body",
+      user_id: users(:one).id
     }
   end
 
@@ -19,7 +20,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "should save with valid data" do
-    post =Post.new(@post_params)
+    post = Post.new(@post_params)
     assert post.save
   end
 end

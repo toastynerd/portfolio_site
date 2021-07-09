@@ -7,3 +7,4 @@
 test_post:
   title: "a test post"
   body: "the body of a test post"
+  user: one 

@@ -19,8 +19,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     get posts_path
     assert_response :success
 
-    assert_select "a", "edit", 2
-    assert_select "a", "delete", 2
     assert_select "input[value=?]", "Create a New Post"
   end
 

@@ -10,11 +10,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = @user.posts.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = @user.posts.new(post_params)
+    @post.user_id = @user.id
     if @post.save
       redirect_to @post, notice: "Post successfully created!"
     else
@@ -28,7 +29,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to @post, notice: "Post successfully updated."
     else

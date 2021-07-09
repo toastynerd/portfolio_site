@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :posts
 
   validate :valid_password_confirmation, on: :create
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }
