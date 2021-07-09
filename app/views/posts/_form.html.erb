@@ -1,3 +1,4 @@
+<%= render "widgets/resource_errors", resource: post %>
 <%= form_with model: post, html: {class: "form-vertical posts-form"} do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
