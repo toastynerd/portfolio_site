@@ -4,6 +4,8 @@
     <li>
       <%= link_to post.title, post_path(post) %> 
       by <%= post.user.username %>
+      <%= post.published || "unpublished" %>
+        
       <% if @user.present? && @user.admin %>
         <%= link_to "edit", edit_post_path(post) %>
         <%= link_to "delete", 

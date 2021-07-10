@@ -18,8 +18,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should have an index" do
     get posts_path
     assert_response :success
-
-    assert_select "input[value=?]", "Create a New Post"
   end
 
   test "it should have a page to make a new post" do
@@ -29,10 +27,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil @controller.instance_variable_get('@post')
     assert_response :success
 
-    assert_select "form"
-    assert_select "label", 2
-    assert_select "textarea"
-    assert_select "input", 2
     set_current_user_cleanup
   end
 
@@ -75,9 +69,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "h1", "Editing: #{test_post.title}"
 
-    assert_select "form"
-    assert_select "label", 2
-    assert_select "input", 3 #there's a hidden input with a token in it for the edit
     set_current_user_cleanup
   end
 
