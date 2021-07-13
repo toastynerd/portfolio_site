@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :posts
   root 'static#home'
-  get 'about', to: 'static#about'
+  get 'projects', to: 'static#projects'
 
   # authentication routes
   get 'sign_up', to: 'registrations#new'
