@@ -12,7 +12,7 @@
 
   <body>
     <%= render "partials/navbar" %>
-    <ul>
+    <ul class="flash">
       <% flash.each do |type, message| %>
         <li class="<%= type %>"><%= message %></li>
       <% end %>

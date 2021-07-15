@@ -4,19 +4,13 @@
     <li><%= link_to "Blog", posts_path %></li>
     <li><%= link_to "Projects", projects_path %></li>
   </ul>
-  <ul>
-    <% if @user.present? && !@user.username.nil? %>
-      <li>
-        Logged in as <%= @user.username %>
-        <%= link_to "Sign Out", sign_out_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "Sign Up", sign_up_path %>
-      </li>
-      <li>
-        <%= link_to "Sign In", sign_in_path %>
-      </li>
-    <% end %>
-  </ul>
+
+  <% if @user.present? && !@user.username.nil? %>
+    <ul>
+        <li>
+          Logged in as <%= @user.username %>
+          <%= link_to "Sign Out", sign_out_path, method: :delete %>
+        </li>
+    </ul>
+  <% end %>
 </nav>
