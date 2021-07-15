@@ -1,0 +1,13 @@
+<%= render "widgets/resource_errors", resource: project %>
+<%= form_with model: project, html: {class: "form-vertical projects-form"} do |f|  %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :technologies %>
+  <%= f.text_area :technologies %>
+
+  <%= f.submit %>
+<% end %>
