@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_185336) do
+ActiveRecord::Schema.define(version: 2021_07_15_050827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "links", force: :cascade do |t|
+    t.string "body"
+    t.string "icon_url"
+    t.string "linkable_type"
+    t.bigint "linkable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -23,6 +33,14 @@ ActiveRecord::Schema.define(version: 2021_07_10_185336) do
     t.bigint "user_id"
     t.date "published"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "technologies", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
