@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_050827) do
+ActiveRecord::Schema.define(version: 2021_07_18_060315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "links", force: :cascade do |t|
-    t.string "body"
     t.string "icon_url"
     t.string "linkable_type"
     t.bigint "linkable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "url"
+    t.string "description"
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable"
   end
 
@@ -38,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_050827) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.text "technologies", array: true
+    t.text "technologies", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

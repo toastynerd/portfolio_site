@@ -3,7 +3,8 @@ require "test_helper"
 class LinkTest < ActiveSupport::TestCase
   setup do
     @params = {
-      body: 'http://test.example.com',
+      url: 'http://test.example.com',
+      description: 'a test link',
       icon_url: 'http://test.example.com/test.png'
     }
   end
