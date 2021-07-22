@@ -1,6 +1,6 @@
 <h2>Sign in to an existing user</h2>
 
-<%= form_with url: sign_in_path, method: :post, html: {class: "form-vertical signin-form"} do |f| %>
+<%= form_with url: sign_in_path, method: :post, html: {class: "form-vertical signin-form user-form"} do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
 

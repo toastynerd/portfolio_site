@@ -1,6 +1,6 @@
 .form-vertical {
   display: grid;
-  max-width: 500px;
+  width: 50vw;
 
   input {
     margin-bottom: 2em;
@@ -17,4 +17,8 @@
   input[type="submit"] {
     padding: 0.5em;
   }
+}
+
+.user-form {
+  max-width: 600px;
 }
