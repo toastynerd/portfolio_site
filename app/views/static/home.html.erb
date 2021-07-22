@@ -1,2 +1,15 @@
 <h1>Tyler Morgan</h1>
-<p>Ruby, Javascript and the rest.</p>
+<p>Welcome to my site! I'm a Fullstack Javascript and Ruby on Rails
+developer. 
+</p>
+
+<ul class="user links">
+  <% @links.each do |link| %>
+    <li>
+      <a href="<%= link.url %>">
+        <%= image_tag link.icon_url %>
+        <%= link.description %>
+      </a>
+    </li>
+  <% end %>
+</ul>
