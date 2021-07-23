@@ -1,7 +1,9 @@
 nav {
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid #ccc;
 
   ul {
     display: flex;
@@ -14,7 +16,6 @@ nav {
 
   li a {
     padding: .75em 2em;
-    text-decoration: none;
     color: black;
   }
 
