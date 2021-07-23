@@ -36,5 +36,4 @@ yarn-debug.log*
 .yarn-integrity
 #ignore postgres directory
 data/
-Gemfile.lock
 **/*.sw?
