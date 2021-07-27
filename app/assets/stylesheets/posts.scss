@@ -41,6 +41,16 @@ ul.posts-list a:hover {
   padding: .5em .75em;
 }
 
+h1.post-title {
+  margin-bottom: 0;
+}
+
+.post-show.credits {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
 div.admin-functions {
   display: inline-block;
 }

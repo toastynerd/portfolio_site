@@ -1,5 +1,8 @@
-<h1><%= @post.title %></h1>
-
+<h1 class="post-title"><%= @post.title %></h1>
+<div class="post-show credits">
+  <span class="post-show author"><%= @post.user.username %></span>
+  <span class="post-show published"><%= @post.published || 'unpublished' %></span>
+</div>
 <div class="body posts">
   <%= markdown(@post.body) %>
 </div>
