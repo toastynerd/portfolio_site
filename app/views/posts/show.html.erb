@@ -6,3 +6,11 @@
 <div class="body posts">
   <%= markdown(@post.body) %>
 </div>
+
+<div class="admin-functions">
+  <%= link_to "edit", edit_post_path(@post) %>
+  <%= link_to "delete",
+    post_path(@post),
+    method: :delete,
+    data: {confirm: "are you sure?"} %>
+</div>
