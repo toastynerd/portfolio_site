@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_07_18_060315) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.text "technologies", default: [], array: true
+    t.text "technologies", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

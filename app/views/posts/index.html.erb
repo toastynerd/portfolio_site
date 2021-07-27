@@ -1,17 +1,21 @@
 <h1>Blog</h1>
-<ul class="posts">
+<ul class="posts-list">
   <% @posts.each do |post| %>
     <li>
-      <%= link_to post.title, post_path(post) %> 
-      by <%= post.user.username %>
-      <%= post.published || "unpublished" %>
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <div class="posts-list credits">
+        <span class="posts-list author">by <%= post.user.username %></span>
+        <span class="posts-list published"><%= post.published || "unpublished" %></span>
+      </div>
         
       <% if @user.present? && @user.admin %>
-        <%= link_to "edit", edit_post_path(post) %>
-        <%= link_to "delete", 
-          post_path(post), 
-          method: :delete, 
-          data: {confirm: "are you sure?"} %>
+        <div class="admin-functions">
+          <%= link_to "edit", edit_post_path(post) %>
+          <%= link_to "delete", 
+            post_path(post), 
+            method: :delete, 
+            data: {confirm: "are you sure?"} %>
+        </div>
       <% end %>
     </li>
   <% end %>

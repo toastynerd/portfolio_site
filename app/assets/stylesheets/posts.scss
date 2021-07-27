@@ -8,4 +8,50 @@
   }
 }
 
+.posts.body {
+  max-width: 800px;
+}
 
+ul.posts-list {
+  width: 80vw;
+  max-width: 800px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.posts-list li {
+  margin-bottom: 2em;
+  padding: 1em;
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+ul.posts-list a {
+  text-decoration: none;
+  color: black;
+  padding: 1em;
+}
+
+ul.posts-list a:hover {
+  background-color: #cdcdef;
+}
+
+.posts-list.credits {
+  padding: .5em .75em;
+}
+
+div.admin-functions {
+  display: inline-block;
+}
+
+.admin-functions>a {
+  background-color: #ccc;
+  border: 1px solid black;
+  padding: .5em;
+  border-radius: 5px;
+}
+
+.admin-functions>a:hover {
+  background-color: #dfdfdf;
+}
