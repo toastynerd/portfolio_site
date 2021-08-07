@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   def index
     if @user && @user.admin
-      @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
     else
       @posts = Post.where.not(published: nil).order(published: :desc)
     end
