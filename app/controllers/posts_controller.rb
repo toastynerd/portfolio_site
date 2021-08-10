@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :require_logged_in, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
   def index
-    if @user && @user.admin
+    if @user.try(:admin)
       @posts = Post.all.order(created_at: :desc)
     else
       @posts = Post.where.not(published: nil).order(published: :desc)

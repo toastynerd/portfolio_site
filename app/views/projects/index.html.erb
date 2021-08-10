@@ -10,7 +10,7 @@
         <li><%= technology %></li>
       <% end %>
     </ul>
-    <% if @user.present? && @user.admin %>
+    <% if @user.try(:admin) %>
       <%= link_to "edit", edit_project_path(project) %>
       <%= link_to "delete",
           project_path(project),
@@ -20,6 +20,6 @@
   </div>
 <% end %>
 
-<% if @user.present? && @user.admin %>
+<% if @user.try(:admin) %>
   <%= button_to "Create a new project", new_project_path, method: :get %>
 <% end %>

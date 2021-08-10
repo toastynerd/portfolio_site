@@ -8,7 +8,7 @@
         <span class="posts-list published"><%= post.published || "unpublished" %></span>
       </div>
         
-      <% if @user.present? && @user.admin %>
+      <% if @user.try(:admin) %>
         <div class="admin-functions">
           <%= link_to "edit", edit_post_path(post) %>
           <%= link_to "delete", 
@@ -21,6 +21,6 @@
   <% end %>
 </ul>
 
-<% if @user.present? && @user.admin %>
+<% if @user.try(:admin) %>
   <%= button_to "Create a New Post", new_post_path, method: :get %>
 <% end %>
