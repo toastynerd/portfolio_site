@@ -3,7 +3,7 @@
   <span class="post-show author"><%= @post.user.username %></span>
   <span class="post-show published"><%= @post.published || 'unpublished' %></span>
 </div>
-<div class="body posts">
+<div class="post-body posts">
   <%= markdown(@post.body) %>
 </div>
 

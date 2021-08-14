@@ -8,8 +8,13 @@
   }
 }
 
-.posts.body {
+.post-body {
   max-width: 800px;
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
 }
 
 ul.posts-list {
